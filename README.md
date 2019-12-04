@@ -12,5 +12,5 @@ reset your camera.
 # Step:3
 Run python-script.py file.
 
-## troubleshooting.
+## Troubleshooting.
 if camera is not getting connected,check out Com9 port, camera is connected to.
