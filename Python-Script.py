@@ -1,10 +1,17 @@
-import sys, serial, struct
+
+import serial
 port = 'COM9'
 sp = serial.Serial(port, baudrate=115200)
-#sp.setDTR(True) # dsrdtr is ignored on Windows.
-#sp.flush()
+
 print("starting")
+str=""
 while 1:
-    #print("in while loop")
-    b= sp.read().decode('utf-8')
-    print(b)
+    b= sp.read().decode('utf-8')  # decoing the input character from the camera
+    
+    if b is not "*":        #  condition to check the string termination for character concatenation.
+        str += b
+    else:                   # condition is terminating character is found then print the string and then rest the sting
+        print (str)
+        str=""              # reseting the string
+        
+        
